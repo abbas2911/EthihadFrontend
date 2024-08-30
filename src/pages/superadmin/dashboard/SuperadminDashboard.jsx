@@ -20,19 +20,21 @@ const SuperadminDashboard = () => {
   const [year, setYear] = useState(new Date().getFullYear());
   const [loading, setLoading] = useState(true);
 
-  const fetchLogs = async () => {
+  const fetchLogs = useCallback(async () => {
     try {
       const response = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/fetchLogs');
       setLogs(response.data);
     } catch (error) {
       console.error('Error fetching logs:', error);
     }
-  };
+  }, []);
 
-  const fetchStatistics = async () => {
+  const fetchStatistics = useCallback(async () => {
     try {
-      const classCoachResponse = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/statistics');
-      const studentResponse = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/getStudentStats');
+      const [classCoachResponse, studentResponse] = await Promise.all([
+        axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/statistics'),
+        axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/getStudentStats')
+      ]);
 
       setStats({
         totalClasses: classCoachResponse.data.totalClasses,
@@ -43,7 +45,7 @@ const SuperadminDashboard = () => {
     } catch (error) {
       console.error('Error fetching statistics:', error);
     }
-  };
+  }, []);
 
   const fetchLedger = useCallback(async (customMonth = month, customYear = year) => {
     setLoading(true);
@@ -65,14 +67,10 @@ const SuperadminDashboard = () => {
   useEffect(() => {
     fetchLogs();
     fetchStatistics();
- 
   }, [fetchLogs, fetchStatistics]);
 
   useEffect(() => {
-    const fetchData=async () => {
-      await fetchLedger();
-    };
-    fetchData();
+    fetchLedger();
   }, [fetchLedger]);
 
   const handleAddAdminClick = () => navigate('/superadmin/add-admin');
