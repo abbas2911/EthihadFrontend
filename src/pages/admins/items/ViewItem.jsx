@@ -18,7 +18,7 @@ const ViewItem = () => {
 
     const fetchItemData = async () => {
         try {
-            const response = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/fetchItemList');
+            const response = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/fetchItemList');
             setItems(response.data);
             setFilteredItems(response.data);
             setLoading(false);

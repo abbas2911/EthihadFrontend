@@ -19,7 +19,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchLogs = async () => {
       try {
-        const response = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/fetchLogs');
+        const response = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/fetchLogs');
         setLogs(response.data);
       } catch (error) {
         console.error('Error fetching logs:', error);
@@ -28,7 +28,7 @@ const AdminDashboard = () => {
 
     const fetchAttendance = async () => {
       try {
-        const response = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/fetchAttendance');
+        const response = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/fetchAttendance');
         setAttendances(response.data);
       } catch (error) {
         console.error('Error fetching attendance:', error);
@@ -37,8 +37,8 @@ const AdminDashboard = () => {
 
     const fetchStatistics = async () => {
       try {
-        const classCoachResponse = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/statistics');
-        const studentResponse = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/getStudentStats');
+        const classCoachResponse = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/statistics');
+        const studentResponse = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/getStudentStats');
 
         setStats({
           totalClasses: classCoachResponse.data.totalClasses,

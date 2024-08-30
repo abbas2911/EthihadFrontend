@@ -17,7 +17,7 @@ const AddLocation = () => {
         const token = localStorage.getItem('token'); // Get token from localStorage
 
         try {
-            const response = await axios.post('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/insertLocation', {
+            const response = await axios.post('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/insertLocation', {
                 locationName,
             }, {
                 headers: {

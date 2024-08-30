@@ -12,7 +12,7 @@ const Attendance = () => {
       try {
         const token = localStorage.getItem('token');
         if (token) {
-          const response = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/coach/fetchCoachClass', {
+          const response = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/coach/fetchCoachClass', {
             headers: {
               Authorization: `Bearer ${token}`
             }

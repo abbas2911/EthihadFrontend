@@ -20,7 +20,7 @@ const MarkGradebook = () => {
         const fetchClassDetailsAndStudents = async () => {
           try {
                 const token = localStorage.getItem('token');
-                const response = await axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/coach/classDetails/${classID}`, {
+                const response = await axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/coach/classDetails/${classID}`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
 
@@ -64,7 +64,7 @@ const MarkGradebook = () => {
 
         try {
             const token = localStorage.getItem('token');
-            await axios.post('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/coach/markGradebook', data, {
+            await axios.post('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/coach/markGradebook', data, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json'

@@ -10,7 +10,7 @@ const ReadCoach = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/read-coach/${coachID}`)
+        axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/read-coach/${coachID}`)
             .then(response => {
                 setCoach(response.data);
                 setLoading(false);

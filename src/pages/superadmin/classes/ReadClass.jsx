@@ -18,7 +18,7 @@ const ReadClass = () => {
         const fetchClassData = async () => {
             try {
                 // Fetch class data
-                const classResponse = await axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/read-class/${classID}`);
+                const classResponse = await axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/read-class/${classID}`);
                 if (classResponse.data && classResponse.data.length > 0) {
                     setClassItem(classResponse.data[0]);
                 } else {
@@ -26,7 +26,7 @@ const ReadClass = () => {
                 }
 
                 // Fetch sport data
-                const sportResponse = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/fetchSport');
+                const sportResponse = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/fetchSport');
                 const sportData = sportResponse.data;
                 const sportMap = sportData.reduce((map, sport) => {
                     map[sport.sportID] = sport.sportName;
@@ -35,7 +35,7 @@ const ReadClass = () => {
                 setSportMap(sportMap);
 
                 // Fetch term data
-                const termResponse = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/fetchTerm');
+                const termResponse = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/fetchTerm');
                 const termData = termResponse.data;
                 const termMap = termData.reduce((map, term) => {
                     map[term.termID] = term.termName;
@@ -44,7 +44,7 @@ const ReadClass = () => {
                 setTermMap(termMap);
 
                 // Fetch location data
-                const locationResponse = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/fetchLocationID');
+                const locationResponse = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/fetchLocationID');
                 const locationData = locationResponse.data;
                 const locationMap = locationData.reduce((map, location) => {
                     map[location.locationID] = location.locationName;
@@ -53,7 +53,7 @@ const ReadClass = () => {
                 setLocationMap(locationMap);
 
                 // Fetch age category data
-                const ageCategoryResponse = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/classAgeCategory');
+                const ageCategoryResponse = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/classAgeCategory');
                 const ageCategoryData = ageCategoryResponse.data;
                 const ageCategoryMap = ageCategoryData.reduce((map, category) => {
                     map[category.ageCategoryID] = category.ageCategoryName; // changed to match backend response
@@ -63,7 +63,7 @@ const ReadClass = () => {
 
 
                 // Fetch coach data
-                const coachResponse = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/fetchCoach');
+                const coachResponse = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/fetchCoach');
                 const coachData = coachResponse.data;
                 const coachMap = coachData.reduce((map, coach) => {
                     map[coach.coachID] = coach.coachName;

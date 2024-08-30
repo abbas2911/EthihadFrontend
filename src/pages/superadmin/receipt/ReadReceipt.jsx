@@ -10,7 +10,7 @@ const ReadReceipt = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/read-receipt/${receiptID}`)
+        axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/read-receipt/${receiptID}`)
             .then(response => {
                 setReceipt(response.data); // Directly set the receipt object
                 setLoading(false);

@@ -17,7 +17,7 @@ const SelectTerm = () => {
 
     useEffect(() => {
         // Fetch all terms
-        axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/fetchTerm')
+        axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/fetchTerm')
             .then(response => {
                 setTerms(Array.isArray(response.data) ? response.data : []);
                 console.log(response.data);
@@ -27,7 +27,7 @@ const SelectTerm = () => {
             });
 
         // Fetch the selected term
-        axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/getSelectedTerm')
+        axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/getSelectedTerm')
             .then(response => {
                 setSelectedTerm(response.data);
                 setFormData(prevFormData => ({
@@ -55,7 +55,7 @@ const SelectTerm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/saveSelectedTerm', { termID: formData.termID })
+        axios.post('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/saveSelectedTerm', { termID: formData.termID })
             .then(response => {
                 console.log('Term selected:', response.data);
                 setAlertMessage('Term Successfully Selected');

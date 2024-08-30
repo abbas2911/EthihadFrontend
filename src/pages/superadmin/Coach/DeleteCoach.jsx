@@ -19,7 +19,7 @@ const DeleteCoach = () => {
 
     const fetchCoachDetails = async () => {
         try {
-            const response = await axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/read-coach/${coachID}`);
+            const response = await axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/read-coach/${coachID}`);
             setCoach(response.data);
             setLoading(false);
         } catch (error) {
@@ -30,7 +30,7 @@ const DeleteCoach = () => {
 
     const handleDelete = async () => {
         try {
-            const response = await axios.delete(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/delete-coach/${coachID}`);
+            const response = await axios.delete(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/delete-coach/${coachID}`);
             setAlertMessage(`Coach ${response.data.username} successfully deleted`);
             setAlertSeverity('success');
             setOpenAlert(true);

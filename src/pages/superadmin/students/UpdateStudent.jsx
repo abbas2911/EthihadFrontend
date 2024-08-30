@@ -39,7 +39,7 @@ const UpdateStudent = () => {
     useEffect(() => {
         const fetchStudent = async () => {
             try {
-                const response = await axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/read-students/${studentID}`);
+                const response = await axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/read-students/${studentID}`);
                 if (response.data.length > 0) {
                     const studentData = response.data[0];
                     setStudent({
@@ -84,8 +84,8 @@ const UpdateStudent = () => {
     useEffect(() => {
         const fetchDropdownOptions = async () => {
             try {
-                const ageCategoryResponse = await axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/studentAgeCategory`);
-                const locationResponse = await axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/fetchLocationID`);
+                const ageCategoryResponse = await axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/studentAgeCategory`);
+                const locationResponse = await axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/fetchLocationID`);
 
                 setAgeCategories(ageCategoryResponse.data);
                 setLocations(locationResponse.data);
@@ -176,7 +176,7 @@ const UpdateStudent = () => {
             }
     
             try {
-                const response = await axios.put(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/update-student/${studentID}`, formData, {
+                const response = await axios.put(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/update-student/${studentID}`, formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data',
                     },

@@ -20,7 +20,7 @@ const AddReceiptForm = () => {
         // Fetch all invoice IDs
         const fetchInvoices = async () => {
             try {
-                const response = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/getInvoiceIDs');
+                const response = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/getInvoiceIDs');
                 setInvoiceList(response.data);
             } catch (error) {
                 console.error('Error fetching invoices:', error);
@@ -34,7 +34,7 @@ const AddReceiptForm = () => {
         const fetchInvoiceAmount = async () => {
             if (invoiceID) {
                 try {
-                    const response = await axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/getInvoiceAmount/${invoiceID}`);
+                    const response = await axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/getInvoiceAmount/${invoiceID}`);
                     setAmount(response.data.amount);
                 } catch (error) {
                     console.error('Error fetching invoice amount:', error);
@@ -52,7 +52,7 @@ const AddReceiptForm = () => {
         const token = localStorage.getItem('token'); // Get token from localStorage
 
         try {
-            const response = await axios.post('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/insertReceipt', {
+            const response = await axios.post('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/insertReceipt', {
                 invoiceID,
                 paymentDate,
                 paymentMode,

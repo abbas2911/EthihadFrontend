@@ -19,7 +19,7 @@ const UpdateSport = () => {
 
     const fetchSportDetails = async () => {
         try {
-            const response = await axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/ReadSport/${sportID}`);
+            const response = await axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/ReadSport/${sportID}`);
     
             setFormData({
                 sport_name: response.data.sport_name || '',
@@ -40,7 +40,7 @@ const UpdateSport = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/updateSport/${sportID}`, formData);
+            await axios.put(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/updateSport/${sportID}`, formData);
             setAlertMessage('Successfully updated sport');
             setAlertSeverity('success');
             setOpenAlert(true);

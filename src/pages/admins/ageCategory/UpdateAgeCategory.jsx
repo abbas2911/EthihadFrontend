@@ -20,7 +20,7 @@ const updateAgeCategory = () => {
 
     const fetchAgeCategoryDetails = async () => {
         try {
-            const response = await axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/ReadAgeCategory/${ageCategoryID}`);
+            const response = await axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/ReadAgeCategory/${ageCategoryID}`);
     
             setFormData({
                 categoryName: response.data.categoryName || '',
@@ -42,7 +42,7 @@ const updateAgeCategory = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/updateAgeCategory/${ageCategoryID}`, formData);
+            await axios.put(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/updateAgeCategory/${ageCategoryID}`, formData);
             setAlertMessage('Successfully updated age category');
             setAlertSeverity('success');
             setOpenAlert(true);

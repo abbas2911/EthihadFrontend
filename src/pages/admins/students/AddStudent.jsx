@@ -37,7 +37,7 @@ const AddStudent = () => {
     const [openAlert, setOpenAlert] = useState(false);
 
     useEffect(() => {
-        axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/studentAgeCategory')
+        axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/studentAgeCategory')
             .then(response => {
                 setAgeCategories(response.data);
             })
@@ -45,7 +45,7 @@ const AddStudent = () => {
                 console.error('Error fetching age categories:', error);
             });
 
-        axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/fetchParentID')
+        axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/fetchParentID')
             .then(response => {
                 setParentsID(response.data);
             })
@@ -53,7 +53,7 @@ const AddStudent = () => {
                 console.error('Error fetching parent IDs:', error);
             });
 
-        axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/fetchLocationID')
+        axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/fetchLocationID')
             .then(response => {
                 setLocationsID(response.data);
             })
@@ -61,7 +61,7 @@ const AddStudent = () => {
                 console.error('Error fetching location IDs:', error);
             });
 
-        axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/fetchSport')
+        axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/fetchSport')
             .then(response => {
                 setSportsList(response.data);
             })
@@ -158,7 +158,7 @@ const AddStudent = () => {
             const sportIDs = selectedSports.map(sport => sport.sportID);
             formDataWithImage.append('sportIDs', JSON.stringify(sportIDs));
 
-            await axios.post('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/add-student', formDataWithImage, {
+            await axios.post('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/add-student', formDataWithImage, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'multipart/form-data',

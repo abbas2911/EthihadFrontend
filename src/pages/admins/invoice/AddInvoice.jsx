@@ -16,7 +16,7 @@ const AddInvoice = () => {
   const [openAlert, setOpenAlert] = useState(false);
 
   useEffect(() => {
-    axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/fetchStudentID')
+    axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/fetchStudentID')
       .then(response => setStudents(response.data))
       .catch(error => console.error('Error fetching students:', error));
   }, []);
@@ -25,7 +25,7 @@ const AddInvoice = () => {
     const studentID = event.target.value;
     setSelectedStudent(studentID);
 
-    axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/fetchStudentDetails/${studentID}`)
+    axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/fetchStudentDetails/${studentID}`)
       .then(response => setDetails(response.data))
       .catch(error => console.error('Error fetching details:', error));
   };
@@ -95,7 +95,7 @@ const AddInvoice = () => {
       durations: invoiceDurations,
     };
 
-    axios.post('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/insertInvoice', invoiceData, {
+    axios.post('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/insertInvoice', invoiceData, {
       headers: {
         'Authorization': `Bearer ${token}` // Add token to Authorization header
       }

@@ -7,7 +7,7 @@ export const TermProvider = ({ children }) => {
     const [selectedTerm, setSelectedTerm] = useState({ selectedTermID: null, termName: '' });
 
     useEffect(() => {
-        axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/getSelectedTerm')
+        axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/getSelectedTerm')
             .then(response => {
                 const { selectedTermID, termName } = response.data;
                 setSelectedTerm({ selectedTermID, termName });

@@ -127,7 +127,7 @@ const PdfReceipt = () => {
     const [openAlert, setOpenAlert] = useState(false);
 
     useEffect(() => {
-        axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/readReceiptWithStudent/${receiptID}`)
+        axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/readReceiptWithStudent/${receiptID}`)
             .then(response => setReceiptData(response.data))
             .catch(error => console.error('Error fetching receipt data:', error));
     }, [receiptID]);
@@ -200,7 +200,7 @@ const PdfReceipt = () => {
                 reader.onerror = reject;
             });
 
-            await axios.post('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/sendemail', {
+            await axios.post('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/sendemail', {
                 pdf: pdfBase64,
                 receiptID: receiptID,
             });

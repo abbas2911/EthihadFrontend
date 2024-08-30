@@ -28,7 +28,7 @@ const UpdateCoach = () => {
 
     const fetchCoachDetails = async () => {
         try {
-            const response = await axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/read-coach/${coachID}`);
+            const response = await axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/read-coach/${coachID}`);
             setFormData(response.data);
         } catch (error) {
             console.error('Error fetching coach details:', error);
@@ -37,7 +37,7 @@ const UpdateCoach = () => {
 
     const fetchLocations = async () => {
         try {
-            const response = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/fetchLocation');
+            const response = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/fetchLocation');
             setLocations(response.data);
         } catch (error) {
             console.error('Error fetching locations:', error);
@@ -54,7 +54,7 @@ const UpdateCoach = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/update-coach/${coachID}`, formData);
+            await axios.put(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/update-coach/${coachID}`, formData);
             setAlertMessage('Successfully updated coach');
             setAlertSeverity('success');
             setOpenAlert(true);

@@ -14,7 +14,7 @@ const UpdateStudentSport = () => {
   const [openAlert, setOpenAlert] = useState(false);
 
   useEffect(() => {
-    axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/fetchSport')
+    axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/fetchSport')
       .then(response => {
         setAllSports(response.data);
       })
@@ -22,7 +22,7 @@ const UpdateStudentSport = () => {
         console.error('Error fetching all sports:', error);
       });
 
-    axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/read-student-sports/${studentID}`)
+    axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/read-student-sports/${studentID}`)
       .then(response => {
         setSports(response.data);
       })
@@ -44,7 +44,7 @@ const UpdateStudentSport = () => {
       return;
     }
 
-    axios.put(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/update-student-sports/${studentID}`, {
+    axios.put(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/update-student-sports/${studentID}`, {
       sports: sportsToUpdate
     })
     .then(response => {
@@ -62,7 +62,7 @@ const UpdateStudentSport = () => {
   };
 
   const handleDelete = (studentsportID) => {
-    axios.delete(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/delete-student-sport/${studentID}/${studentsportID}`)
+    axios.delete(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/delete-student-sport/${studentID}/${studentsportID}`)
       .then(response => {
         setSports(sports.filter(sport => sport.studentsportID !== studentsportID));
         setAlertMessage('Sport deleted successfully');

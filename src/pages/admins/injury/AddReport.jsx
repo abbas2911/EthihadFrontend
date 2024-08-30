@@ -22,7 +22,7 @@ const InjuryReportForm = () => {
 
     const fetchStudentData = async () => {
         try {
-            const response = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/view-students');
+            const response = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/view-students');
             setStudents(response.data);
             setFilteredStudents(response.data);
             setLoading(false);
@@ -34,7 +34,7 @@ const InjuryReportForm = () => {
 
     const fetchAdminData = async () => {
         try {
-            const response = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/view-admins');
+            const response = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/view-admins');
             setAdmins(response.data);
         } catch (error) {
             console.error('Error fetching admin data:', error);
@@ -60,7 +60,7 @@ const InjuryReportForm = () => {
         setLoading(true);
 
         try {
-            const response = await axios.post('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/injury-report', {
+            const response = await axios.post('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/injury-report', {
                 studentID: selectedStudent.studentID,
                 adminID: selectedAdmin.adminID,
                 reportMessage: reportMessage,

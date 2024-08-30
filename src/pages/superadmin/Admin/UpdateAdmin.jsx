@@ -20,7 +20,7 @@ const UpdateAdmin = () => {
     useEffect(() => {
         const fetchAdmin = async () => {
             try {
-                const response = await axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/read-admin/${adminID}`);
+                const response = await axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/read-admin/${adminID}`);
                 const { username, firstName, lastName, email, phone } = response.data;
                 setUsername(username);
                 setFirstName(firstName);
@@ -44,7 +44,7 @@ const UpdateAdmin = () => {
         const token = localStorage.getItem('token'); // Get token from localStorage
 
         try {
-            const response = await axios.put(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/update-admin/${adminID}`, {
+            const response = await axios.put(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/update-admin/${adminID}`, {
                 username,
                 password,
                 firstName,

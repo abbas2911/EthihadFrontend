@@ -28,23 +28,23 @@ const AddClass = () => {
     const [openAlert, setOpenAlert] = useState(false);
 
     useEffect(() => {
-        axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/fetchSport')
+        axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/fetchSport')
             .then(response => setSports(response.data))
             .catch(error => console.error('Error fetching sports:', error));
 
-        axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/fetchCoach')
+        axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/fetchCoach')
             .then(response => setCoaches(response.data))
             .catch(error => console.error('Error fetching coaches:', error));
 
-        axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/classAgeCategory')
+        axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/classAgeCategory')
             .then(response => setAgeCategories(response.data))
             .catch(error => console.error('Error fetching age categories:', error));
 
-        axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/fetchTerm')
+        axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/fetchTerm')
             .then(response => setTerms(response.data))
             .catch(error => console.error('Error fetching terms:', error));
 
-        axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/fetchLocationID')
+        axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/fetchLocationID')
             .then(response => setLocations(response.data))
             .catch(error => console.error('Error fetching locations:', error));
     }, []);
@@ -69,7 +69,7 @@ const AddClass = () => {
         }
 
         try {
-            await axios.post('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/add-class', formData, {
+            await axios.post('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/add-class', formData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'application/json',

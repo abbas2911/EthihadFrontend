@@ -22,7 +22,7 @@ const SuperadminDashboard = () => {
 
   const fetchLogs = async () => {
     try {
-      const response = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/fetchLogs');
+      const response = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/fetchLogs');
       setLogs(response.data);
     } catch (error) {
       console.error('Error fetching logs:', error);
@@ -31,8 +31,8 @@ const SuperadminDashboard = () => {
 
   const fetchStatistics = async () => {
     try {
-      const classCoachResponse = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/statistics');
-      const studentResponse = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/getStudentStats');
+      const classCoachResponse = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/statistics');
+      const studentResponse = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/getStudentStats');
 
       setStats({
         totalClasses: classCoachResponse.data.totalClasses,
@@ -48,7 +48,7 @@ const SuperadminDashboard = () => {
   const fetchLedger = useCallback(async (customMonth = month, customYear = year) => {
     setLoading(true);
     try {
-      const response = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/fetchLedger', {
+      const response = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/fetchLedger', {
         params: {
           month: customMonth,
           year: customYear,

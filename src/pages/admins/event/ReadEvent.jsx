@@ -10,7 +10,7 @@ const ReadEvent = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/read-event/${eventID}`)
+        axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/read-event/${eventID}`)
             .then(response => {
                 setEvent(response.data);  // Directly set the event object
                 setLoading(false);

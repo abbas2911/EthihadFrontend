@@ -21,7 +21,7 @@ const ViewComplaints = () => {
 
     const fetchComplaintsData = async () => {
         try {
-            const response = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/getcomplaints');
+            const response = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/getcomplaints');
             setComplaints(response.data);
             setFilteredComplaints(response.data);
             setLoading(false);
@@ -65,7 +65,7 @@ const ViewComplaints = () => {
 
     const handleDelete = async (complaintID) => {
         try {
-            await axios.delete(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/deleteComplaint/${complaintID}`);
+            await axios.delete(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/deleteComplaint/${complaintID}`);
             setComplaints(complaints.filter(complaint => complaint.complaintID !== complaintID));
             setFilteredComplaints(filteredComplaints.filter(complaint => complaint.complaintID !== complaintID));
             setAlertMessage('Complaint deleted successfully');

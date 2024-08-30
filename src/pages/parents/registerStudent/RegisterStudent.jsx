@@ -34,7 +34,7 @@ const RegisterStudent = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/studentAgeCategory')
+        axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/studentAgeCategory')
             .then(response => {
                 setAgeCategories(response.data);
             })
@@ -42,7 +42,7 @@ const RegisterStudent = () => {
                 console.error('Error fetching age categories:', error);
             });
 
-        axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/fetchLocationID')
+        axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/fetchLocationID')
             .then(response => {
                 setLocationsID(response.data);
             })
@@ -123,7 +123,7 @@ const RegisterStudent = () => {
               formDataWithImage.append(key, formData[key]);
           }
   
-          await axios.post('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/parent/registerNewStudent', formDataWithImage, {
+          await axios.post('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/parent/registerNewStudent', formDataWithImage, {
               headers: {
                   Authorization: `Bearer ${token}`,
                   'Content-Type': 'multipart/form-data',

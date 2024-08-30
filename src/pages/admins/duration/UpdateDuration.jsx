@@ -23,7 +23,7 @@ const UpdateDuration = () => {
 
     const fetchDurationDetails = async () => {
         try {
-            const response = await axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/ReadDuration/${durationID}`);
+            const response = await axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/ReadDuration/${durationID}`);
             setFormData(response.data);
         } catch (error) {
             console.error('Error fetching duration details:', error);
@@ -40,7 +40,7 @@ const UpdateDuration = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/updateDuration/${durationID}`, formData);
+            await axios.put(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/updateDuration/${durationID}`, formData);
             setAlertMessage('Successfully updated Duration');
             setAlertSeverity('success');
             setOpenAlert(true);

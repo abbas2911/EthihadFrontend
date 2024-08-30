@@ -19,7 +19,7 @@ const UpdateLocation = () => {
 
     const fetchLocationDetails = async () => {
         try {
-            const response = await axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/ReadLocation/${locationID}`);
+            const response = await axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/ReadLocation/${locationID}`);
     
             setFormData({
                 locationName: response.data.locationName || '',
@@ -40,7 +40,7 @@ const UpdateLocation = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/updateLocation/${locationID}`, formData);
+            await axios.put(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/updateLocation/${locationID}`, formData);
             setAlertMessage('Successfully updated location');
             setAlertSeverity('success');
             setOpenAlert(true);

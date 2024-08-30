@@ -17,8 +17,8 @@ const ViewClass = () => {
         const fetchData = async () => {
             try {
                 const [classResponse, coachResponse] = await Promise.all([
-                    axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/view-class'),
-                    axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/fetchCoach')
+                    axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/view-class'),
+                    axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/fetchCoach')
                 ]);
 
                 setClasses(classResponse.data);

@@ -18,7 +18,7 @@ const ViewAdmin = () => {
 
     const fetchAdminData = async () => {
         try {
-            const response = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/view-admins'); // Ensure this endpoint exists
+            const response = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/view-admins'); // Ensure this endpoint exists
             const transformedAdmins = response.data.map(admin => ({
                 ...admin,
                 phone: admin.phone || 'N/A'

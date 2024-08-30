@@ -14,7 +14,7 @@ const ReadAdmin = () => {
     useEffect(() => {
         const fetchAdmin = async () => {
             try {
-                const response = await axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/read-admin/${adminID}`);
+                const response = await axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/read-admin/${adminID}`);
                 setAdmin(response.data);
                 setLoading(false);
             } catch (error) {

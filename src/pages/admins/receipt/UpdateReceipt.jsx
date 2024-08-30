@@ -26,7 +26,7 @@ const UpdateReceipt = () => {
 
     const fetchReceiptDetails = async () => {
         try {
-            const response = await axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/read-receipt/${receiptID}`);
+            const response = await axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/read-receipt/${receiptID}`);
             
             // Format the date to yyyy-mm-dd
             const formatDate = (dateStr) => {
@@ -56,7 +56,7 @@ const UpdateReceipt = () => {
 
     const fetchInvoiceIDs = async () => {
         try {
-            const response = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/getInvoiceIDs');
+            const response = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/getInvoiceIDs');
             setInvoiceIDs(response.data);
         } catch (error) {
             console.error('Error fetching invoice IDs:', error);
@@ -65,7 +65,7 @@ const UpdateReceipt = () => {
 
     const fetchInvoiceAmount = async (invoiceID) => {
         try {
-            const response = await axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/getInvoiceAmount/${invoiceID}`);
+            const response = await axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/getInvoiceAmount/${invoiceID}`);
             setFormData((prevFormData) => ({
                 ...prevFormData,
                 amount: response.data.amount,
@@ -94,7 +94,7 @@ const UpdateReceipt = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/updateReceipt/${receiptID}`, formData);
+            await axios.put(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/updateReceipt/${receiptID}`, formData);
 
             setAlertMessage('Successfully Updated Receipt');
             setAlertSeverity('success');

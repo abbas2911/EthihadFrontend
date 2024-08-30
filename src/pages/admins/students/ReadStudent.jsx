@@ -10,7 +10,7 @@ const ReadStudent = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/read-students/${studentID}`)
+        axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/read-students/${studentID}`)
             .then(response => {
                 setStudent(response.data[0]);
                 setLoading(false);

@@ -18,7 +18,7 @@ const AddDurationForm = () => {
     useEffect(() => {
         const fetchSport = async () => {
             try {
-                const response = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/fetchSport');
+                const response = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/fetchSport');
                 setSports(response.data);
             } catch (error) {
                 console.error('Error fetching sports:', error);
@@ -35,7 +35,7 @@ const AddDurationForm = () => {
         const token = localStorage.getItem('token'); // Get token from localStorage
 
         try {
-            const response = await axios.post('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/insertDuration', {
+            const response = await axios.post('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/insertDuration', {
                 durationName,
                 durationDescription,
                 sportID,

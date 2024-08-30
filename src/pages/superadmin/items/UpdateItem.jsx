@@ -21,7 +21,7 @@ const UpdateItem = () => {
 
     const fetchItemDetails = async () => {
         try {
-            const response = await axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/ReadItem/${itemID}`);
+            const response = await axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/ReadItem/${itemID}`);
             setFormData(response.data);
         } catch (error) {
             console.error('Error fetching item details:', error);
@@ -38,7 +38,7 @@ const UpdateItem = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/updateItem/${itemID}`, formData);
+            await axios.put(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/updateItem/${itemID}`, formData);
             setAlertMessage('Successfully updated item');
             setAlertSeverity('success');
             setOpenAlert(true);

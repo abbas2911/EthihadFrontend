@@ -19,7 +19,7 @@ const MarkAttendance = () => {
         const fetchClassDetailsAndStudents = async () => {
           try {
                 const token = localStorage.getItem('token');
-                const response = await axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/coach/classDetails/${classID}`, {
+                const response = await axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/coach/classDetails/${classID}`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
 
@@ -48,7 +48,7 @@ const MarkAttendance = () => {
         try {
             const token = localStorage.getItem('token');
             const selectedStudents = Object.keys(attendance).filter(studentID => attendance[studentID]);
-            await axios.post('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/coach/markAttendance', {
+            await axios.post('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/coach/markAttendance', {
                 classID,
                 studentIDs: selectedStudents,
                 sessionDate

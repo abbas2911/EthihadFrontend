@@ -14,7 +14,7 @@ const DeleteEvent = () => {
 
     const handleDelete = async () => {
         try {
-            const response = await axios.delete(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/delete-event/${eventID}`);
+            const response = await axios.delete(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/delete-event/${eventID}`);
             setAlertMessage(response.data.msg);
             setAlertMessage('Successfully Deleted Event');
             setAlertSeverity('success');

@@ -18,7 +18,7 @@ const ViewDuration = () => {
 
     const fetchDurationData = async () => {
         try {
-            const response = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/fetchDurationList');
+            const response = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/fetchDurationList');
             setDurations(response.data);
             setFilteredDurations(response.data);
             setLoading(false);

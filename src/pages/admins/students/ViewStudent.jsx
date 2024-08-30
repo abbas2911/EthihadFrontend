@@ -18,7 +18,7 @@ const ViewStudent = () => {
 
     const fetchStudentData = async () => {
         try {
-            const response = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/view-students');
+            const response = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/view-students');
             const transformedStudents = response.data.map(student => ({
                 ...student,
                 active: student.active === 1 ? 'Yes' : 'No'

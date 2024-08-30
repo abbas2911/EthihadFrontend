@@ -22,7 +22,7 @@ const AddAttendance = () => {
 
     const fetchCoaches = async () => {
         try {
-            const response = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/fetchCoaches');
+            const response = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/fetchCoaches');
             setCoaches(response.data);
         } catch (error) {
             console.error('Error fetching coaches:', error);
@@ -31,7 +31,7 @@ const AddAttendance = () => {
 
     const fetchLocations = async () => {
         try {
-            const response = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/fetchlocationID');
+            const response = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/fetchlocationID');
             setLocations(response.data);
         } catch (error) {
             console.error('Error fetching locations:', error);
@@ -48,7 +48,7 @@ const AddAttendance = () => {
                 attendanceDate, // Already in yyyy-mm-dd format
                 status
             };
-            await axios.post('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/add-attendance', attendanceData);
+            await axios.post('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/add-attendance', attendanceData);
             setAlertMessage('Attendance submitted successfully');
             setAlertSeverity('success');
             setOpenAlert(true);

@@ -18,7 +18,7 @@ const ViewSport = () => {
 
     const fetchSportData = async () => {
         try {
-            const response = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/fetchSportList');
+            const response = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/fetchSportList');
             setSports(response.data);
             setFilteredSports(response.data);
             setLoading(false);

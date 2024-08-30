@@ -18,7 +18,7 @@ const ChooseSport = () => {
       try {
         // Fetch sports
         const token = localStorage.getItem('token');
-        const sportsResponse = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/parent/fetchSports', {
+        const sportsResponse = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/parent/fetchSports', {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -26,7 +26,7 @@ const ChooseSport = () => {
         setSports(sportsResponse.data);
 
         // Fetch students (you might need to adjust this URL based on your API)
-        const studentsResponse = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/parent/students', {
+        const studentsResponse = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/parent/students', {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -45,7 +45,7 @@ const ChooseSport = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.post('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/parent/studentsport', 
+      const response = await axios.post('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/parent/studentsport', 
         { studentID: selectedStudent, sportID: selectedSport }, 
         {
           headers: {

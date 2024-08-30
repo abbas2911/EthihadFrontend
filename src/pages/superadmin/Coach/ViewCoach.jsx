@@ -18,7 +18,7 @@ const ViewCoach = () => {
 
     const fetchCoachData = async () => {
         try {
-            const response = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/view-coaches'); // Ensure this endpoint exists
+            const response = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/view-coaches'); // Ensure this endpoint exists
             const transformedCoaches = response.data.map(coach => ({
                 ...coach,
                 phone: coach.phone || 'N/A'

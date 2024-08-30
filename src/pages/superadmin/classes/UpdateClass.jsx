@@ -31,7 +31,7 @@ const UpdateClass = () => {
     useEffect(() => {
         const fetchClassData = async () => {
             try {
-                const response = await axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/supersuperadmin/read-class/${classID}`);
+                const response = await axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/supersuperadmin/read-class/${classID}`);
                 if (response.data.length > 0) {
                     const classData = response.data[0];
                     setClassItem({
@@ -59,11 +59,11 @@ const UpdateClass = () => {
         const fetchDropdownData = async () => {
             try {
                 const [sportsResponse, termsResponse, locationsResponse, ageCategoriesResponse, coachesResponse] = await Promise.all([
-                    axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/fetchSport'),
-                    axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/fetchTerm'),
-                    axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/fetchLocationID'),
-                    axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/classAgeCategory'),
-                    axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/fetchCoach')
+                    axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/fetchSport'),
+                    axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/fetchTerm'),
+                    axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/fetchLocationID'),
+                    axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/classAgeCategory'),
+                    axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/fetchCoach')
                 ]);
     
                 setSports(sportsResponse.data);
@@ -96,7 +96,7 @@ const UpdateClass = () => {
             setOpenAlert(true);
         } else {
             try {
-                const response = await axios.put(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/update-class/${classID}`, classItem);
+                const response = await axios.put(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/update-class/${classID}`, classItem);
                 const updatedClass = response.data;
 
                 setClassItem(updatedClass);

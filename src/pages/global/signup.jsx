@@ -103,7 +103,7 @@ const SignUp = () => {
 
     try {
       const formData = { ...form, role: 'parent' };
-      const response = await axios.post('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/signup', formData);
+      const response = await axios.post('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/signup', formData);
       
       console.log(response.data);
       setAlertMessage('Sign up successful');

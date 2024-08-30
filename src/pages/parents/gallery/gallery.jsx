@@ -26,7 +26,7 @@ const Gallery = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const response = await axios.get('https://abbas-test-project-4dc6504935e5.herokuapp.com/api/parent/students', {
+      const response = await axios.get('https://ethihad-backend-server-4565c742307a.herokuapp.com/api/parent/students', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setStudents(response.data);
@@ -43,7 +43,7 @@ const Gallery = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const response = await axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/parent/classes/${studentID}`, {
+      const response = await axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/parent/classes/${studentID}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setClasses(response.data);
@@ -65,7 +65,7 @@ const Gallery = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const response = await axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/parent/gallery/${studentID}/${classID}`, {
+      const response = await axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/parent/gallery/${studentID}/${classID}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (response.data.length === 0) {

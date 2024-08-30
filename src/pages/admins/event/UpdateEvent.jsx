@@ -24,7 +24,7 @@ const UpdateEvent = () => {
 
     const fetchEventDetails = async () => {
         try {
-            const response = await axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/read-event/${eventID}`);
+            const response = await axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/read-event/${eventID}`);
             
             // Format the dates to yyyy-mm-dd
             const formatDate = (dateStr) => {
@@ -62,7 +62,7 @@ const UpdateEvent = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/admin/update-event/${eventID}`, formData);
+            await axios.put(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/admin/update-event/${eventID}`, formData);
             setAlertMessage('Successfully updated event');
             setAlertSeverity('success');
             setOpenAlert(true);

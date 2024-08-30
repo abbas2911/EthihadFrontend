@@ -25,7 +25,7 @@ const ViewInjuryReports = ({ parentID }) => {
     
     const fetchInjuryReportsData = async () => {
         try {
-            const response = await axios.get(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/parent/getInjury/${parentID}`);
+            const response = await axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/parent/getInjury/${parentID}`);
             setInjuryReports(response.data);
             setFilteredReports(response.data);
             setLoading(false);

@@ -17,7 +17,7 @@ const DeleteAdmin = () => {
         const token = localStorage.getItem('token'); // Get token from localStorage
 
         try {
-            const response = await axios.delete(`https://abbas-test-project-4dc6504935e5.herokuapp.com/api/superadmin/delete-admin/${adminID}`, {
+            const response = await axios.delete(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/superadmin/delete-admin/${adminID}`, {
                 headers: {
                     'Authorization': `Bearer ${token}` // Add token to Authorization header
                 }
