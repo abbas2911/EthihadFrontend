@@ -3,9 +3,8 @@ import axios from 'axios';
 import { motion } from 'framer-motion';
 import TableComponent from '../../../components/admin/ViewTableComponent/ViewTableComponents';
 import Header from '../../../components/common/admins/Header';
-import { useParams } from 'react-router-dom';
 
-const ViewInjuryReports = ({ parentID }) => {
+const ViewInjuryReports = () => {
     const [injuryReports, setInjuryReports] = useState([]);
     const [filteredReports, setFilteredReports] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -14,27 +13,29 @@ const ViewInjuryReports = ({ parentID }) => {
     const [openAlert, setOpenAlert] = useState(false);
 
     useEffect(() => {
-        if (parentID) {
-            console.log('parentID:', parentID);
-            fetchInjuryReportsData();
-        } else {
-            console.error('parentID is not defined');
-        }
-    }, [parentID]); // Make sure to pass parentID as a dependency
-    // Make sure to pass parentID as a dependency
-    
+        fetchInjuryReportsData();
+    }, []);
+
     const fetchInjuryReportsData = async () => {
         try {
-            const response = await axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/parent/getInjury/${parentID}`);
+            // Fetch injury reports directly from backend using parentID
+            const response = await axios.get(`https://ethihad-backend-server-4565c742307a.herokuapp.com/api/parent/getInjury`, {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`, // Assuming JWT token is stored in localStorage
+                },
+            });
+
             setInjuryReports(response.data);
             setFilteredReports(response.data);
             setLoading(false);
         } catch (error) {
             console.error('Error fetching injury reports data:', error);
+            setAlertMessage('Failed to fetch injury reports.');
+            setAlertSeverity('error');
+            setOpenAlert(true);
             setLoading(false);
         }
     };
-    
 
     const columns = [
         { header: 'Injury ID', accessor: 'injuryID' },
@@ -48,9 +49,8 @@ const ViewInjuryReports = ({ parentID }) => {
         const lowercasedFilter = filterText.toLowerCase();
         const filteredData = injuryReports.filter((item) =>
             columns.some((col) =>
-                typeof col.accessor === 'function'
-                    ? col.accessor(item).toString().toLowerCase().includes(lowercasedFilter)
-                    : item[col.accessor].toString().toLowerCase().includes(lowercasedFilter)
+                typeof item[col.accessor] === 'string' &&
+                item[col.accessor].toLowerCase().includes(lowercasedFilter)
             )
         );
         setFilteredReports(filteredData);
@@ -58,8 +58,8 @@ const ViewInjuryReports = ({ parentID }) => {
 
     const handleSort = (column, direction) => {
         const sortedData = [...filteredReports].sort((a, b) => {
-            const aValue = typeof column.accessor === 'function' ? column.accessor(a) : a[column.accessor];
-            const bValue = typeof column.accessor === 'function' ? column.accessor(b) : b[column.accessor];
+            const aValue = typeof a[column.accessor] === 'string' ? a[column.accessor] : a[column.accessor].toString();
+            const bValue = typeof b[column.accessor] === 'string' ? b[column.accessor] : b[column.accessor].toString();
             return direction === 'asc'
                 ? aValue.localeCompare(bValue)
                 : bValue.localeCompare(aValue);

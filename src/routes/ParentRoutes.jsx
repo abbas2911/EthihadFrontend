@@ -12,6 +12,7 @@ import PdfCertificate from '../pages/parents/certificate/PdfCertificate';
 import ViewSessions from '../pages/parents/sessions/ViewSessions';
 import ParentComplaintForm from '../pages/parents/complaint/ComplaintForm';
 import ViewInjuryReports from '../pages/parents/injury/ViewReport';
+import UpdateParent from '../pages/parents/settings/settings';
 
 import { Sidebar } from '../components/common/parents/Sidebar';
 
@@ -36,6 +37,9 @@ const ParentRoutes = () => (
             <Route path="view-sessions" element={<ViewSessions />} />
             <Route path="complaint" element={<ParentComplaintForm />} />
             <Route path="report" element={<ViewInjuryReports />} />
+            <Route path='update-parent/:parentID' element={<UpdateParent />} />
+
+
         </Route>
     </Routes>
   </div>
